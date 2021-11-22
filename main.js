@@ -235,7 +235,7 @@ function question_3() {
             inside_token--;
             document.querySelector('.current_3').innerHTML=`Current Marking: [${wait_token}.wait,${free_token}.free,${inside_token}.inside,${busy_token}.busy, ${done_token}.done,${docu_token}.docu]`
             done_token++;
-            
+            docu_token++;
         document.querySelector('.change-3').classList.add("fired");
         }
         document.querySelector('.busy-3').innerText = busy_token;
