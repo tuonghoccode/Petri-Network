@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematical Modeling Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 style="display: flex; justify-content: center; padding: 30px 0px; ">Mathematical Modeling Assignment</h1>
+    <div class="code">
+        <h2 class="type">
+            Member: <span id="typed2"></span>
+        </h2>
+    </div>
+    <script src="typed.min.js"></script>
+    <script>
+         var typed2 = new Typed('#typed2', {
+                strings: ['Lâm Tường','Lê Ngọ','Nhật Thanh','Khoa Lê','Huỳnh Văn Nhân'],
+                typeSpeed:20,
+                backSpeed: 40,
+                fadeOut: true,
+                loop: true
+            })
+    </script>
+    <div class="end-title"></div>
+
+    <div class="question-1">
+        <h1 style="display: flex; justify-content: center; padding: 30px 0px; color:#28a745">Patient network</h1>
+        <p>Initial marking: M0 = [ <input class="wait-input" type="text" size="2"> .wait,
+            <input class="inside-input" type=" text " size="1 ">.inside,
+            <input class="done-input" type="text " size="1 ">.done ]
+            <span class="line "></span>
+            <button type="button" class="btn set-btn btn-outline-success btn-lg" onclick="question_1()">Set</button>
+        </p>
+        <div class="flowchart-1">
+            <div class="wait " style="display: inline-block; ">
+                0</div>
+            <div class="start-1 " style="display: inline-block;" data-toggle="tooltip" title="Click to fire">Fired</div>
+            <div class="inside " style="display: inline-block; ">
+                0
+            </div>
+            <div class="change-1 " style="display: inline-block; " data-toggle="tooltip" title="Click to fire">Fired</div>
+            <div class="done " style="display: inline-block; ">0</div>
+        </div>
+        <p class="current_1">Current Marking: [0.wait,0.inside,0.done]</p>
+        <div class="end-line"></div>
+    </div>
+    <div class=" question-2 ">
+        <br />
+        <h1 style="display: flex; justify-content: center; padding: 30px 0px; color:#28a745">Specialist network</h2>
+            <p>Initial marking: M0 = [ <input class="free-input " type="text " size="1 "> .free,
+                <input class="busy-input " type=" text " size="1 ">.busy,
+                <input class="docu-input " type="text " size="1 ">.docu ]
+                <span class="line "></span>
+                <!-- <button class="set-btn " onclick="question_2()">Set</button> -->
+                <button type="button" class="btn btn-lg set-btn btn-outline-success" onclick="question_2()">Set</button>
+            </p>
+            <div class="flowchart-2 ">
+                <div class="free " style="display: inline-block; ">
+                    0</div>
+                <div class="end " style="display: inline-block; " data-toggle="tooltip" title="Click to fire">
+                    Fired
+                </div>
+                <div class="docu " style="display: inline-block; ">
+                    0
+                </div>
+                <br />
+                <div class="start-2 " style="display: inline-block; " data-toggle="tooltip" title="Click to fire">Fired</div>
+                <div class="busy " style="display: inline-block; ">0</div>
+                <div class="change " style="display: inline-block; " data-toggle="tooltip" title="Click to fire">Fired</div>
+            </div>
+            <p class="current_2">Current Marking: [0.wait,0.inside,0.done]</p>
+
+            <div class="end-line"></div>
+
+    </div>
+    <div class="question-3">
+        <br />
+        <h1 style="display: flex; justify-content: center; padding: 30px 0px; color:#28a745">Superimposed network</h1>
+        <p>Initial marking: M0 = [ <input class="wait-input3" type="text" size="1"> .wait,
+            <input class="free-input3" type=" text " size="1 ">.free,
+            <input class="inside-input3" type="text " size="1 ">.inside,
+            <input class="busy-input3" type="text " size="1 ">.busy,
+            <input class="done-input3" type="text " size="1 ">.done,
+            <input class="docu-input3" type="text " size="1 ">.docu, ]
+            <span class="line "></span>
+
+            <button type="button" class="btn set-btn btn-lg btn-outline-success" onclick="question_3()">Set</button>
+        </p>
+        <div class="flowchart-3">
+            <div class="free-3" style="display: inline-block;">0</div>
+            <div class="end-3" style="display: inline-block;" data-toggle="tooltip" title="Click to fire">Fired</div>
+            <div class="docu-3" style="display: inline-block;">0</div>
+            <br />
+            <div class="wait-3" style="display: inline-block;">0</div>
+            <div class="start-3" style="display: inline-block;" data-toggle="tooltip" title="Click to fire">Fired</div>
+            <div class="busy-3" style="display: inline-block;">0</div>
+            <div class="change-3" style="display: inline-block;" data-toggle="tooltip" title="Click to fire">Fired</div>
+            <div class="done-3" style="display: inline-block;">0</div>
+            <br />
+            <div class="inside-3" style="display: inline-block;">0</div>
+        </div>
+        <p class="current_3">Current Marking: [0.wait,0.free,0.inside,0.busy, 0.done,0.docu]</p>
+        <div class="end-line"></div>
+    </div>
+    <div class="question-4">
+        <br />
+        <h1 style="display: flex; justify-content: center; padding: 30px 0px; color:#28a745">Reachable marking calculator</h1>
+        <p>Initial marking: M0 = [ <input id="wait-input4" type="text" size="1"> .wait,
+            <input id="free-input4" type=" text " size="1 ">.free,
+            <input id="inside-input4" type="text " size="1 ">.inside,
+            <input id="busy-input4" type="text " size="1 ">.busy,
+            <input id="done-input4" type="text " size="1 ">.done,
+            <input id="docu-input4" type="text " size="1 ">.docu, ]
+            <span class="line "></span>
+            <button type="button" class="btn set-btn btn-lg btn-outline-success" id="find">Find</button>
+        <div class="pt-3 mb-4">
+            <label for="output" class="form-label">Result</label>
+            <textarea class="form-control" id="output" rows="15" cols="50"></textarea>
+        </div>
+        </p>
+        <div class="end-line"></div>
+    </div>
+    <script>
+        const findButton = document.getElementById("find");
+        const output = document.getElementById("output");
+        findButton.onclick = () => {
+            const args = ["free", "wait", "busy", "inside", "docu", "done"].map(v => {
+                const str = document.getElementById(`${v}-input4`).value;
+                return str ? parseInt(str) : 0;
+            });
+            if (Math.min(...args) < 0) {
+                alert('Inputs must be non-negative');
+                return;
+            }
+            if (args[1] > 10) {
+                alert('Input too large, must be <= 10');
+                return;
+            }
+            const worker = new Worker('./reach.js');
+
+            const timeout_worker = setTimeout(() => {
+                alert('Computation takes too long, stopping');
+                worker.terminate();
+            }, 10000);
+            worker.onmessage = ev => {
+                const [msg, result] = JSON.parse(ev.data);
+                if (msg === 'error') {
+                    alert(`Too many sequences, there are ${result} reachable markings`);
+                }
+                if (msg === 'success') {
+                    output.value = result;
+                }
+                clearTimeout(timeout_worker);
+                worker.terminate();
+            }
+            worker.postMessage(JSON.stringify(["find", args]));
+        }
+    </script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
