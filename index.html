@@ -30,7 +30,8 @@
             })
     </script>
     <div class="end-title"></div>
-
+    <input step="100" style="margin-left:5%;margin-top: 20px;"type="range" class="form-range" id="customRange1" min="100" max="1500" value="500" onchange="updateTextInput(this.value);">
+    <label id="lable_customRange1"for="customRange1" >Set delay 500ms</label>
     <div class="question-1">
         <h1 style="display: flex; justify-content: center; padding: 30px 0px; color:#28a745">Patient network</h1>
         <p>Initial marking: M0 = [ <input class="wait-input" type="text" size="2"> .wait,
@@ -41,6 +42,8 @@
         </p>
         
         <p style="font-style: italic; font-size: 20px; color:#28a745">Click on transition to fire!</p>
+        
+        
         <div class="flowchart-1">
             <div class="wait " style="display: inline-block; ">
                 0</div>
@@ -150,7 +153,6 @@
                 return;
             }
             const worker = new Worker('./reach.js');
-
             const timeout_worker = setTimeout(() => {
                 alert('Computation takes too long, stopping');
                 worker.terminate();

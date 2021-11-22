@@ -5,7 +5,11 @@ class Node{
         this.prev = null;
     }
 }
-
+var time = 0;
+function updateTextInput(val){
+    time = val;
+    document.getElementById("lable_customRange1").innerHTML=`Set delay ${time}ms`
+}
 function question_1() {
     let wait_form = document.querySelector(".wait-input");
     let inside_form = document.querySelector(".inside-input");
@@ -54,7 +58,7 @@ function question_1() {
         document.querySelector('.start-1').classList.remove("fired");
             document.querySelector('.inside').innerHTML = inside_token.data;
             document.querySelector(".current_1").innerHTML=`Current Marking: [${wait_token.data}.wait,${inside_token.data}.inside,${done_token.data}.done]`
-        },800)
+        },time)
     
     })
     document.querySelector('.change-1').addEventListener('click',function(){
@@ -69,7 +73,7 @@ function question_1() {
         document.querySelector('.change-1').classList.remove("fired");
             document.querySelector('.done').innerHTML = done_token.data;
             document.querySelector(".current_1").innerHTML=`Current Marking: [${wait_token.data}.wait,${inside_token.data}.inside,${done_token.data}.done]`
-        },800)
+        },time)
 
     })
 }
@@ -112,7 +116,7 @@ function question_2() {
         document.querySelector('.end').classList.remove("fired");
             document.querySelector('.free').innerHTML = free_token;
             document.querySelector(".current_2").innerHTML=`Current Marking: [${free_token}.free,${busy_token}.busy,${docu_token}.docu]`
-        },800)
+        },time)
     })
     document.querySelector('.start-2').addEventListener('click',function(){
         if (free_token>=1){
@@ -127,7 +131,7 @@ function question_2() {
         document.querySelector('.start-2').classList.remove("fired");
             document.querySelector('.busy').innerHTML = busy_token;
             document.querySelector(".current_2").innerHTML=`Current Marking: [${free_token}.free,${busy_token}.busy,${docu_token}.docu]`
-        },800)
+        },time)
     })
     document.querySelector('.change').addEventListener('click',function(){
         if (busy_token>=1){
@@ -142,7 +146,7 @@ function question_2() {
         document.querySelector('.change').classList.remove("fired");
             document.querySelector('.docu').innerHTML = docu_token;
             document.querySelector(".current_2").innerHTML=`Current Marking: [${free_token}.free,${busy_token}.busy,${docu_token}.docu]`
-        },800)
+        },time)
     })
 
 
@@ -208,7 +212,7 @@ function question_3() {
         document.querySelector('.end-3').classList.remove("fired");
             document.querySelector('.free-3').innerHTML = free_token;
             document.querySelector(".current_3").innerHTML=`Current Marking: [${wait_token}.wait,${free_token}.free,${inside_token}.inside,${busy_token}.busy, ${done_token}.done,${docu_token}.docu]`
-        },800)
+        },time)
     })
 
     document.querySelector('.start-3').addEventListener('click',function(){
@@ -227,7 +231,7 @@ function question_3() {
             document.querySelector('.busy-3').innerHTML = busy_token;
             document.querySelector('.inside-3').innerHTML = inside_token;
             document.querySelector(".current_3").innerHTML=`Current Marking: [${wait_token}.wait,${free_token}.free,${inside_token}.inside,${busy_token}.busy, ${done_token}.done,${docu_token}.docu]`
-        },800)
+        },time)
     })
     document.querySelector('.change-3').addEventListener('click',function(){
         if (busy_token >= 1 && inside_token >= 1){
@@ -245,6 +249,7 @@ function question_3() {
             document.querySelector('.done-3').innerHTML = done_token;
             document.querySelector('.docu-3').innerHTML = docu_token;
             document.querySelector(".current_3").innerHTML=`Current Marking: [${wait_token}.wait,${free_token}.free,${inside_token}.inside,${busy_token}.busy, ${done_token}.done,${docu_token}.docu]`
-        },800)
+        },time)
     })
 }
+
